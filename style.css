@@ -16,6 +16,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1;
 }
 
 .top img{
@@ -52,14 +53,16 @@ time {
     left: 0;
 }
 
-.roomStatus{
-    background-color: #DCDCDC;
+.status{
+    background-color: #dcdcdc;
 }
-.allMessage{
-    background-color: #FFFFFF;
+
+.message{
+    background-color: #ffffff;
 }
-.privateMessage{
-    background-color: #FFDEDE;
+
+.private_message{
+    background-color: #ffdede;
 }
 textarea{
     border: none;

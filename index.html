@@ -14,33 +14,15 @@
         <img src="./icontop.png" />
     </span>
     <div class="centerContainer">
-        <div class="roomStatus">
-            <time>(09:21:45)</time>
-            <span><strong>João</strong> entra na sala...</span>
-        </div>
-        <div class="allMessage">
-            <time>(09:22:28)</time>
-            <span><strong>João</strong> para <strong>Todos</strong>: Bom dia</span>
-        </div>
-        <div class="allMessage">
-            <time>(09:22:38)</time>
-            <span><strong>Maria</strong> para <strong>João</strong>: Oi João :)</span>
-        </div>
-        <div class="privateMessage">
-            <time>(09:22:48)</time>
-            <span><strong>João</strong> reservadamente para <strong>Maria</strong>: Oi gatinha quer tc?</span>
-        </div>
-        <div class="roomStatus">
-            <time>(09:22:58)</time>
-            <span><strong>Maria</strong> sai da sala...</span>
-        </div>
+
     </div>
     <span class="bottom">
             <textarea wrap = "hard" placeholder="Escreva aqui..."></textarea>
-            <div>
+            <div onclick="clickSend()">
                 <img src="./send.png" />
             </div> 
     </span>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
