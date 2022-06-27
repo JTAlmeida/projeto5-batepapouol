@@ -73,7 +73,7 @@ textarea{
     font-weight: 400;
     color: #000000;
     margin: 15px 0px 0px 17px;
-    padding-top: 14px;
+    padding-top: 8px;
 }
 
 textarea::placeholder {
@@ -97,8 +97,6 @@ textarea::placeholder {
 .status {
     word-wrap: break-word;
 }
-
-/* BÔNUS: PARTICIPANTES ATIVOS */
 
 .sideMenu{
     height: 100%;
@@ -173,8 +171,6 @@ textarea::placeholder {
 h2 {
     margin-left: 17px;
 }
-
-/* BÔNUS: TELA DE ENTRADA */
 
 .loginScreen {
     background-color: #ffffff;

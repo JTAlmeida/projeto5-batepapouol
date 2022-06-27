@@ -42,11 +42,10 @@ function invalidNickname(element){
     let status = (element.response.status);
     if (status === 400) {
         alert (`Este nome já está sendo usado, tente novamente.`);
-        start();
-
+        window.location.reload();
     } else {
         alert (`Erro ${status}`);
-        start();
+        window.location.reload();
     }
 }
 
@@ -63,6 +62,7 @@ function checkUserStatus(){
 function showPosts (element){
     let messageQuantity = element.data.length;
     let chat = document.querySelector(".centerContainer")
+    let countPrivateMessage = 0;
     chat.innerHTML = "";
     
     for (let i = 0; i < messageQuantity; i++){
@@ -79,16 +79,18 @@ function showPosts (element){
             `<div class="${post.type}">
                 <span><time>(${post.time})</time> <strong>${post.from}</strong> para <strong>${post.to}</strong>: ${post.text}</span>
             </div>`            
-        } else if ( (post.to === nickname || post.from === nickname) && post.type === "private_message") {            
-            message = 
-            `<div class="${post.type}">
-                <span><time>(${post.time})</time> <strong>${post.from}</strong> reservadamente para <strong>${post.to}</strong>: ${post.text}</span>
-            </div>`
-        }  
+        } else if ( post.type === "private_message") {  
+            countPrivateMessage++;  
+            if (post.to === nickname || post.from === nickname){
+                message = 
+                `<div class="${post.type}">
+                    <span><time>(${post.time})</time> <strong>${post.from}</strong> reservadamente para <strong>${post.to}</strong>: ${post.text}</span>
+                </div>`
+            }    
+        }
         chat.innerHTML += message;
     }
-
-    let lastPost = document.querySelector(".centerContainer :nth-child(100)");
+    let lastPost = document.querySelector(`.centerContainer :nth-child(${100-countPrivateMessage})`);
     lastPost.scrollIntoView();
 }
 
@@ -108,13 +110,17 @@ function clickSend(){
     promise.catch(errorMessage);
 }
 
-document.querySelector(".input").addEventListener("keydown", function (e) {
-    if (e.key === "Enter") {  
+document.querySelector(".input").addEventListener("keypress", function (e) {
+    let textInput = document.querySelector(".input");
+    if (e.key === "Enter" && e.shiftKey){
+        textInput+="\n";
+    }else if (e.key === "Enter") {  
+        e.preventDefault();
         clickSend();
     }
 });
 
-document.querySelector(".nickname").addEventListener("keydown", function (e) {
+document.querySelector(".nickname").addEventListener("keypress", function (e) {
     if (e.key === "Enter") {  
         start();
     }
@@ -131,7 +137,6 @@ function loadingScreen() {
 function hideLoading() {
     document.querySelector(".loginScreen").classList.add("hidden");
 }
-
 
 function toggleSideMenu() {
     document.querySelector(".sideMenu").classList.toggle('hidden')
