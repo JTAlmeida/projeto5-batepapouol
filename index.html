@@ -11,18 +11,60 @@
 <body>
     <span class="top">
         <img src="./logo.png" />
-        <img src="./icontop.png" />
+        <img src="./icontop.png" onclick="toggleSideMenu()" />
     </span>
     <div class="centerContainer">
 
     </div>
     <span class="bottom">
-            <textarea wrap = "hard" placeholder="Escreva aqui..."></textarea>
+            <textarea wrap = "hard" placeholder="Escreva aqui..." class="input"></textarea>
+            <h2></h2>
             <div onclick="clickSend()">
                 <img src="./send.png" />
             </div> 
     </span>
+
+    <div class="loginScreen">
+        <img src="./logo.png">
+        <input class="nickname" placeholder="Digite seu nome">
+        <button onclick="start()">Entrar</button>
+        <div class="loading hidden">
+          <img src="./loading.gif">
+          <h1>Loading...</h1>
+        </div>
+      </div>
+
+    <!-- BÔNUS: PARTICIPANTES ATIVOS -->
+
+    <div class="sideMenu hidden">
+        <div class="backgroundSideMenu" onclick="toggleSideMenu()"></div>
+        <div class="users">
+          <h1>Escolha um contato</br>para enviar a mensagem:</h1>
+  
+          <div class="contacts">  
+          </div>
+  
+          <h1>Escolha a visibilidade:</h1>  
+          <div class="visibilidade">
+    
+            <div class="publico selected" onclick="selectVisibility(this)">
+              <ion-icon name="lock-open"></ion-icon>
+              <h2>Público</h2>
+              <ion-icon name="checkmark-outline"></ion-icon>
+            </div>
+    
+            <div class="reservadamente" onclick="selectVisibility(this)">
+              <ion-icon name="lock-closed"></ion-icon>
+              <h2>Reservadamente</h2>
+              <ion-icon name="checkmark-outline"></ion-icon>
+            </div>
+          </div>  
+        </div>  
+      </div>
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>

@@ -68,6 +68,7 @@ textarea{
     border: none;
     resize: none;
     width: 300px;
+    height: 40px;
     font-size: 18px;
     font-weight: 400;
     color: #000000;
@@ -85,6 +86,159 @@ textarea::placeholder {
     position: fixed;
     right: 18px;
     bottom: 25px;
+}
+
+.message {
+    word-wrap: break-word;
+}
+.private_message {
+    word-wrap: break-word;
+}
+.status {
+    word-wrap: break-word;
+}
+
+/* BÔNUS: PARTICIPANTES ATIVOS */
+
+.sideMenu{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    display: flex;
+}
+
+.users {
+    background-color: rgba(255, 255, 255, 1);
+    width: 70%;
+    height: inherit;
+    max-width: 375px;
+    min-width: 220px;
+    padding: 20px;
+}
+
+.contacts {
+    height: 50%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.contacts > div, .visibilidade > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 7px;
+}
+
+.backgroundSideMenu {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 40%;
+    max-width: 200px;
+    height: inherit;
+}
+
+.users h1 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.users h2{
+    width: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    margin-left: 7px;
+}
+
+.users h2:hover, .retorno:hover {
+    cursor: pointer;
+}
+
+.users ion-icon{
+    font-size: 22px;
+}
+
+.contato :nth-child(3), .publico :nth-child(3), .reservadamente :nth-child(3) {
+    color: #ffffff;
+}
+
+.selected :nth-child(3){
+    color: green;
+}
+
+h2 {
+    margin-left: 17px;
+}
+
+/* BÔNUS: TELA DE ENTRADA */
+
+.loginScreen {
+    background-color: #ffffff;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    max-width: 375px;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginScreen > img {
+    margin: 100px 0;
+}
+
+.nickname {
+    width: 200px;
+    height: 50px;
+    border-radius: 4px;
+    border: solid 1px #d7d7d7;
+    text-align: center;
+    font-size: 18px;
+    color: #aeaeae;
+}
+
+.loginScreen button {
+    height: 45px;
+    width: 110px;
+    border-radius: 9px;
+    margin-top: 15px;
+    border: solid 1px rgb(57, 57, 57);
+    background-color: #e7e7e7;
+    text-align: center;
+    color: #696969;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.loginScreen button:active {
+    background-color: #bdbdbd;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loading img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+.loading h1 {
+    margin: 20px 0;
+    font-weight: 500;
+    color: #696969;
+}
+
+.hidden {
+    display: none;
 }
 
 @media (max-width: 375px){
